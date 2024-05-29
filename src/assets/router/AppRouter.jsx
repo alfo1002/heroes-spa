@@ -6,6 +6,7 @@ import { Navbar } from "../../ui/components/Navbar"
 import { HeroPage } from "../../heroes/pages/HeroPage"
 import { SearchPage } from "../../heroes/pages/SearchPage"
 import { PrivateRoute } from "./PrivateRoute"
+import { PublicRoute } from "./PublicRoute"
 
 export const AppRouter = () => {
     return (
@@ -13,7 +14,15 @@ export const AppRouter = () => {
             <Navbar />
             <Routes>
 
-                <Route path="/login" element={<LoginPage />} />
+                <Route path="login/*" element={
+                    <PublicRoute>
+                        {/* <LoginPage /> */}
+                        <Routes>
+                            <Route path="/*" element={<LoginPage />} />
+                        </Routes>
+                    </PublicRoute>
+                } />
+
 
                 <Route path="/*" element={
                     <PrivateRoute>
