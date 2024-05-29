@@ -4,6 +4,7 @@ import { DcPage } from "../../heroes/pages/DcPage"
 import { LoginPage } from "../../auth/pages/LoginPage"
 import { Navbar } from "../../ui/components/Navbar"
 import { HeroPage } from "../../heroes/pages/HeroPage"
+import { SearchPage } from "../../heroes/pages/SearchPage"
 
 export const AppRouter = () => {
     return (
@@ -13,6 +14,7 @@ export const AppRouter = () => {
                 <Route path="marvel" element={<MarvelPage />} />
                 <Route path="dc" element={<DcPage />} />
                 <Route path="hero/:id" element={<HeroPage />} />
+                <Route path="search" element={<SearchPage />} />
                 <Route path="login" element={<LoginPage />} />
                 <Route path="/" element={<Navigate to="/marvel" />} />
             </Routes>
