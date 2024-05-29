@@ -1,9 +1,13 @@
 import { AppRouter } from "./assets/router/AppRouter"
+import { AuthProvider } from "./auth/context/AuthProvider"
 
 export const HeroesApp = () => {
     return (
         <>
-            <AppRouter />
+            <AuthProvider>
+                <AppRouter />
+            </AuthProvider>
+
         </>
 
     )
